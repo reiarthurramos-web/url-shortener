@@ -27,5 +27,3 @@ def login(form: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get
     if not user or not verify_password(form.password, user.password_hash):
         raise HTTPException(401, "Credenciais invalidas")
     return Token(access_token=create_access_token(user.id))
-
-

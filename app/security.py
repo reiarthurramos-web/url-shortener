@@ -28,10 +28,3 @@ def decode_token(token: str) -> int | None:
         return int(payload["sub"])
     except (jwt.PyJWTError, KeyError, ValueError):
         return None
-
-
-# SECRET_KEY: a chave que assina os tokens. Ela lê a variável de ambiente SECRET_KEY e, se não existir, usa um valor padrão (serve para desenvolver, mas em produção precisa ser uma chave forte e secreta).
-# hash_password: transforma a senha em hash para guardar no banco.
-# verify_password: confere se a senha digitada no login bate com o hash.
-# create_access_token: cria o JWT com o id do usuário (sub) e validade de 60 minutos (exp).
-# decode_token: lê o token e devolve o id do usuário. Se o token for inválido ou estiver expirado, devolve None.

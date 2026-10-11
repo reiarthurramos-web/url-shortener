@@ -42,7 +42,5 @@ def db(session_factory):
 def auth_headers(client):
     creds = {"email": "teste@exemplo.com", "password": "senha12345"}
     client.post("/auth/register", json=creds)
-    r = client.post(
-        "/auth/login", data={"username": creds["email"], "password": creds["password"]}
-    )
+    r = client.post("/auth/login", data={"username": creds["email"], "password": creds["password"]})
     return {"Authorization": f"Bearer {r.json()['access_token']}"}

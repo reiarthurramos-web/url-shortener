@@ -48,8 +48,6 @@ def test_cannot_see_stats_of_other_user(client, auth_headers):
     code = create(client, auth_headers).json()["code"]
     other = {"email": "outro@exemplo.com", "password": "senha12345"}
     client.post("/auth/register", json=other)
-    r = client.post(
-        "/auth/login", data={"username": other["email"], "password": other["password"]}
-    )
+    r = client.post("/auth/login", data={"username": other["email"], "password": other["password"]})
     other_headers = {"Authorization": f"Bearer {r.json()['access_token']}"}
     assert client.get(f"/links/{code}/stats", headers=other_headers).status_code == 404

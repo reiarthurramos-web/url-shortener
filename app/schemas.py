@@ -38,5 +38,3 @@ class LinkStats(BaseModel):
     original_url: str
     total_clicks: int
     clicks_by_day: list[DayClicks]
-
-

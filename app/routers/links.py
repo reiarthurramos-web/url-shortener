@@ -82,6 +82,3 @@ def delete_link(code: str, db: Session = Depends(get_db), user: User = Depends(g
     db.delete(link)
     db.commit()
     return Response(status_code=204)
-
-
-

@@ -48,6 +48,3 @@ class Click(Base):
     referer: Mapped[str | None] = mapped_column(String(2048), nullable=True)
 
     link: Mapped["Link"] = relationship(back_populates="clicks")
-
-
-
