@@ -1,4 +1,5 @@
 # URL Shortener
+![Tests](https://github.com/reiarthurramos-web/url-shortener/actions/workflows/tests.yml/badge.svg)
 ![Documentação da API no Swagger](docs/swagger.png)
 
 API de encurtamento de URLs com autenticação JWT, expiração de links e estatísticas de cliques. Feita com **FastAPI**, **SQLAlchemy** e **SQLite**, com testes automatizados em **pytest**.
